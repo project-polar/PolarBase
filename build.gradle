@@ -9,11 +9,9 @@ sourceCompatibility = 1.8
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation 'cc.sfclub:PolarCore:v2.1'
+    implementation fileTree(dir:"libs",include:["*.jar"])
 }
-allprojects {
     repositories {
         maven { url 'https://jitpack.io' }
         mavenCentral()
     }
-}
