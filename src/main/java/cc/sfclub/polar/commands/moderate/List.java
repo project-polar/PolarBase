@@ -2,15 +2,13 @@ package cc.sfclub.polar.commands.moderate;
 
 import cc.sfclub.polar.Command;
 import cc.sfclub.polar.CommandBase;
-import cc.sfclub.polar.CommandFilter;
 import cc.sfclub.polar.Core;
 import cc.sfclub.polar.events.messages.TextMessage;
 import cc.sfclub.polar.user.User;
 
 import java.util.StringJoiner;
 
-@CommandFilter(provider = "CLI")
-@Command(name = "cmds", description = "Get a list of commands", perm = "member.basic.list")
+@Command(name = "cmds", description = "Get a list of commands", perm = "member.mod.list")
 public class List extends CommandBase {
     @Override
     public void onCommand(User u, TextMessage command) {
