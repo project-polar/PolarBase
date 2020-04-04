@@ -19,7 +19,7 @@ public class Status extends CommandBase {
     }
 
     @Override
-    public void onCommand(User u, TextMessage msg) {
+    public boolean onCommand(User u, TextMessage msg) {
         StringBuilder str = new StringBuilder();
         str.append(Core.getConf().name)
                 .append(" ")
@@ -53,5 +53,7 @@ public class Status extends CommandBase {
         //todo time convert
         //str.append("Running about ").append();
         msg.reply(str.toString());
+
+        return true;
     }
 }

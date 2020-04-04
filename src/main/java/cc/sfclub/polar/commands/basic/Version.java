@@ -9,11 +9,13 @@ import cc.sfclub.polar.user.User;
 @Command(name = "ver", description = "get version info", perm = "member.basic.version")
 public class Version extends CommandBase {
     @Override
-    public void onCommand(User u, TextMessage command) {
+    public boolean onCommand(User u, TextMessage command) {
         command.reply(new String[]{
                 Core.getConf().name + " " + Core.getConf().version,
                 "PolarCore by iceBear67",
                 "https://github.com/saltedfishclub/PolarCore"
         });
+
+        return true;
     }
 }

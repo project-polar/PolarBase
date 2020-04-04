@@ -11,7 +11,7 @@ import java.util.StringJoiner;
 @Command(name = "cmds", description = "Get a list of commands", perm = "member.mod.list")
 public class List extends CommandBase {
     @Override
-    public void onCommand(User u, TextMessage command) {
+    public boolean onCommand(User u, TextMessage command) {
         if (command.getMessage().isEmpty()) {
             StringJoiner str = new StringJoiner("\n", "List of Commands:\n", "");
             Core.getInstance().getCommandManager().getCommandMap().keySet().forEach(s -> {
@@ -22,6 +22,6 @@ public class List extends CommandBase {
             });
             command.reply(str.toString());
         }
-
+        return true;
     }
 }
