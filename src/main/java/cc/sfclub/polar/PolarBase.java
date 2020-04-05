@@ -1,6 +1,7 @@
 package cc.sfclub.polar;
 
 import cc.sfclub.polar.commands.basic.Status;
+import cc.sfclub.polar.commands.moderate.Cmds;
 import org.mve.plugin.java.JavaPlugin;
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
@@ -16,6 +17,9 @@ public class PolarBase extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // XXX: Register commands.
+        new Cmds();
+
         try {
             Field field = Core.getInstance().getClass().getDeclaredField("CONFIG_VERSION");
             field.setAccessible(true);
